@@ -25,12 +25,12 @@ string reverseString(string str){
     return str;
 }
 
-string reverse_string_rec(string str){
-   if(str.length() == 1){
+string reverse_string_rec(const string& str){
+   if(str.length() <= 1){
         return str;
    }
    else{
-        return reverse_string_rec(str.substr(1, str.length())) + str[0];
+        return reverse_string_rec(str.substr(1, str.length() - 1)) + str[0];
    }
 }
 
